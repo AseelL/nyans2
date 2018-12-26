@@ -11,7 +11,7 @@ public class Projecto {
         int ma = 0;
         int mi = 0;
         double max = 0;
-        double min = 0;
+        double min = 100;
         double sum = 0;
         double[] avg = new double[100];
         String result = " ";
@@ -54,36 +54,31 @@ public class Projecto {
                     break;
                 case 3:
                     search = JOptionPane.showInputDialog("Please enter student's name: ");
-                    for (int i = 0; i < count; i++) {
-                        if (names[i].equals(search)) {
-                            result += names[i] + "   " + marks[i][0] + "  " + marks[i][1] + "  " + marks[i][2] + "  " + avg[i];
-                            JOptionPane.showMessageDialog(null, result);}
-                           
-                         else {
-                            JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");
-                        } 
+                    for (int i = 0; i < count; i++) 
+                        if (names[i].equals(search)) 
+                        {result += names[i] + "   " + marks[i][0] + "  " + marks[i][1] + "  " + marks[i][2] + "  " + avg[i];
+                          
+                        JOptionPane.showMessageDialog(null, result);}
+                            //we need an else here
+                        
                         result = "";
                         search = "";
-                    }
-
                     break;
                 case 4:
                     search = JOptionPane.showInputDialog("Please enter student's name: ");
-                    for (int i = 0; i < count; i++) {
-                        if (names[i].equals(search)) {
-                            result = search + " is found on those records";
-                            JOptionPane.showMessageDialog(null, result);}
-                            
-                         else {
-                            JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");
-                        }
+                    for (int i = 0; i < count; i++) 
+                        if (names[i].equals(search)) 
+                        {result = search + " is detected on those records";
+                      JOptionPane.showMessageDialog(null, result);  }
+                            //we need an else here
+
                         result = "";
                         search = "";
-                    }
+                    
                     break;
 
-                case 5:
-                    for (int i = 0; i < avg.length; i++) {
+              /*checked*/  case 5:
+                    for (int i = 0; i < count; i++) {
                         if (avg[i] > max) {
                             max = avg[i];
                         }
@@ -93,10 +88,10 @@ public class Projecto {
                     max = 0;
                     break;
 
-                case 6:
-                    for (int i = 0; i < avg.length; i++) {
+               /*checked*/  case 6:
+                    for (int i = 0; i < count; i++) {
                         if (avg[i] < min) {
-                            max = avg[i];
+                            min = avg[i];
                         }
                         mi = i;
                     }
@@ -104,7 +99,7 @@ public class Projecto {
 
                     break;
 
-                case 7:
+             /*checked*/    case 7:
                     for (int i = 0; i < count; i++) {
                         if (marks[i][2] > max) {
                             max = marks[i][2];
@@ -116,7 +111,7 @@ public class Projecto {
                 case 8:
                     c = 1;
                     break;
-                default:
+              /*checked*/   default:
                     JOptionPane.showMessageDialog(null, "your choice doesn't exist, please try again ");
             }
 
