@@ -57,12 +57,13 @@ public class Projecto {
                     for (int i = 0; i < count; i++) {
                         if (names[i].equals(search)) {
                             result += names[i] + "   " + marks[i][0] + "  " + marks[i][1] + "  " + marks[i][2] + "  " + avg[i];
-                            JOptionPane.showMessageDialog(null, result);
-                            result = "";
-                            search = "";
-                        } else {
+                            JOptionPane.showMessageDialog(null, result);}
+                           
+                         else {
                             JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");
-                        }
+                        } 
+                        result = "";
+                        search = "";
                     }
 
                     break;
@@ -70,13 +71,14 @@ public class Projecto {
                     search = JOptionPane.showInputDialog("Please enter student's name: ");
                     for (int i = 0; i < count; i++) {
                         if (names[i].equals(search)) {
-                            result = search + " is found on these records";
-                            JOptionPane.showMessageDialog(null, result);
-                            result = "";
-                            search = "";
-                        } else {
+                            result = search + " is found on those records";
+                            JOptionPane.showMessageDialog(null, result);}
+                            
+                         else {
                             JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");
                         }
+                        result = "";
+                        search = "";
                     }
                     break;
 
