@@ -24,7 +24,7 @@ public class Projecto {
                 + "4- search a name\n"
                 + "5- find highest avg\n"
                 + "6- find lowest avg\n"
-                + "7- highest score in arabic subject\n"
+                + "7- highest score in arabic subject (subject 3)\n"
                 + "8- E X I T \n";
         while (c == 0) {
             int n = Integer.parseInt(JOptionPane.showInputDialog("please enter your choice :\n" + main));
@@ -58,7 +58,8 @@ public class Projecto {
                         if (names[i].equals(search)) {
                             result += names[i] + "   " + marks[i][0] + "  " + marks[i][1] + "  " + marks[i][2] + "  " + avg[i];
                             JOptionPane.showMessageDialog(null, result);
-                            result =""; search="";
+                            result = "";
+                            search = "";
                         } else {
                             JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");
                         }
@@ -66,14 +67,17 @@ public class Projecto {
 
                     break;
                 case 4:
-                     search = JOptionPane.showInputDialog("Please enter student's name: ");
+                    search = JOptionPane.showInputDialog("Please enter student's name: ");
                     for (int i = 0; i < count; i++) {
                         if (names[i].equals(search)) {
-                            result = search+" is found on these records";
+                            result = search + " is found on these records";
                             JOptionPane.showMessageDialog(null, result);
-                            result =""; search="";
-                               } else {
-                            JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");}}
+                            result = "";
+                            search = "";
+                        } else {
+                            JOptionPane.showMessageDialog(null, "This student doesn't exist, please try again");
+                        }
+                    }
                     break;
 
                 case 5:
@@ -84,6 +88,7 @@ public class Projecto {
                         ma = i;
                     }
                     JOptionPane.showMessageDialog(null, "the highest avg is " + max + " for St. " + names[ma]);
+                    max = 0;
                     break;
 
                 case 6:
@@ -98,15 +103,17 @@ public class Projecto {
                     break;
 
                 case 7:
-
+                    for (int i = 0; i < count; i++) {
+                        if (marks[i][2] > max) {
+                            max = marks[i][2];
+                        }
+                    }
+                    JOptionPane.showMessageDialog(null, "the highest score in Arabic subject is " + max);
                     break;
-
+                    
                 case 8:
-
                     c = 1;
-
                     break;
-
                 default:
                     JOptionPane.showMessageDialog(null, "your choice doesn't exist, please try again ");
             }
